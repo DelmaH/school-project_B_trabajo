@@ -16,20 +16,33 @@
     <title>B_Trabajo</title>
 </head>
 <body>
-      <header>
-        <div class="encabezado">
-          <img src="bolsadetrabajo.jpg" alt="logo de la compañia">
-          <h2 class="name-company">I'm Oportunity</2>
+      <div class="contenedor">
+          <div class="btn-menu">  
+              <label for="btn-menu" class="icon-menu">&#9776</label> 
           </div>
+          <div class="logo">
+              <div class="name">
+                <h2>I'm Oportunity</h2>
+                <img src="./imagenes/bolsadetrabajo.jpg" alt="logo de la compañia">
+              </div>
+          </div> 
+      </div>
+      <div class="capa"></div>
+<!--	--------------->
+<input type="checkbox" id="btn-menu">
+<div class="container-menu">
+      <div class="cont-menu">
           <nav>
-            <a href="" class="nav-link">Empleos</a>
-            <a href="" class="nav-link">Postulacones</a>
-            <a href="logout.php" class="nav-link">Cerrar Sesion</a>
+                  <a href="#">Empleos</a>
+                  <a href="#">Postulaciones</a>
+                  <a href="#">Perfil</a>
+                  <a href="logout.php"> Cerrar sesion</a>
           </nav>
-      </header>
-      <div>
-        <h2> HOLA BIENVENIDO <?php echo $_SESSION['correo'] ?> </h2>
-        
-      
+          <label for="btn-menu">✖️</label>
+      </div>
+</div>      
+<div class="cont">
+  <h2> HOLA BIENVENIDO <?php echo $_SESSION['correo'] ?> </h2>
+</div>
 </body>
 </html>
