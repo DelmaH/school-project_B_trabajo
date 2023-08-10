@@ -1,0 +1,184 @@
+body {
+    background-color: rgb(11, 11, 29) ;
+    margin: 0;
+  }
+  
+  .container_table{
+    flex-direction: column;
+    padding: 50px 70px;
+    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 5px;
+    position: relative;
+
+  }
+  .cont_perfil {
+    width: 500px;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(5, 163, 225, 0.1);
+    padding: 30px;
+    margin: auto;
+    margin-top: 490px;
+    margin-right: 650px;
+    color: rgb(31, 26, 26);
+    background-color:rgb(106, 192, 221);
+    border-radius: 5px;
+    float: right;
+    margin-bottom: 10px;
+  }
+  .perfil{
+    height: 305px;
+    width: 100%;
+    margin: auto;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #262121;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="bigint"],
+  input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #0c0f2d;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin-top: 8px; margin-bottom: 8px;
+  }
+  input[type="file"],
+  input[type="checkbox"]{
+    display: none;
+  }
+
+  input[type="text"]:focus,
+  input[type="date"]:focus,
+  input[type="bigint"]:focus,
+  input[type="password"]:focus,
+  input[type="file"]:focus {
+    outline: none;
+    border-color: #555;
+    margin-top: 8px; margin-bottom: 8px;
+  }
+  .form-text{
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    border: 1px solid #0c0f2d;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin-top: 8px; margin-bottom: 8px;
+    background-color: white;
+  }
+  .form-12{
+    position: relative;
+    display: flex;
+  }
+  .form-button{
+    position: relative;
+  }
+  .botom[type="submit"],
+  [type="reset"] {
+    display: block;
+    width: 50%;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-right: 10px; /* Cambiado a 'auto' para centrar horizontalmente */
+
+  }
+  
+  button[type="submit"]:hover,
+  [type="reset"]:hover{
+    background-color: #555;
+  }
+  .botom1{
+    width: 150px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 8px;
+    align-content: center;
+  }
+  .card{
+    height: 350px;
+    width: 100%;
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 110px;
+    position: absolute;
+    border-color: #0c0f2d;
+    border-style: solid;
+    border-top: #fff;
+    border-left: #fff;
+    border-right: #fff;
+  }
+  .content{
+    font-size: 20px;
+    margin-top: 14px;
+    font-family: 'Times New Roman', Times, serif;
+
+  }
+  .user-img{
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    margin: auto;
+    border: 1px solid #0c0f2d;
+  }
+  img{
+    width: 200px;
+    height: 150px;
+    align-content: center;
+    position: relative;
+  } 
+  .card-user{
+    display: inline-flex;
+    width: 20%;
+
+  }
+  .image_actions{
+    padding: 10px;
+    border: 1px solid #0c0f2d;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    place-items: center;
+    margin: auto;
+    cursor: pointer;
+    margin-top: 5px;
+    }
+  .elim_user{
+    padding: 10px;
+    border: 1px solid #0c0f2d;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    place-items: center;
+    margin: auto;
+    cursor: pointer;
+    margin-top: 5px;
+      }
+    label[for="imagen"]{
+      cursor: pointer;
+    }
