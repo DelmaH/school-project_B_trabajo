@@ -9,7 +9,7 @@ if(isset($_POST["registro"])){
         $dni= trim($_POST['dni']);
         $domicilios= trim($_POST['domicilios']);
         $telefonos= trim($_POST['telefonos']);
-        $fechasdenacimiento= date('fechasdenacimiento');
+        $fechasdenacimiento= trim($_POST['fechasdenacimiento']);
         $correos= trim($_POST['correos']);
         $contraseñas= trim($_POST['contraseñas']);
         $consulta= "INSERT INTO alumno(Nombre, Apellido, DNI, Domicilio, Mail, Telefono, Fecha_nacimiento, contraseña) VALUES ('$nombres','$apellidos','$dni','$domicilios','$correos','$telefonos','$fechasdenacimiento','$contraseñas')";
@@ -18,6 +18,16 @@ if(isset($_POST["registro"])){
             ?>
             <h3 class= "ok"> Te registraste correctamente </h3>
             <?php
+            $correos=$_POST['correos'];
+            session_start();
+            $_SESSION['correo']=$correos;
+            if($resultado == $correos){
+                header('Location:Principal_A.php');
+            }
+            elseif($correos == null || $correos == '') {
+              echo 'usted no tiene autorizacion';
+              die();
+            }
         } else{
             ?>
             <h3 class= "bad"> Ocurrio un error </h3>

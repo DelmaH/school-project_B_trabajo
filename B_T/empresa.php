@@ -34,7 +34,7 @@
             });
           });
         </script>
-        <form method="POST"> 
+        <form action="insertE.php" method="POST"> 
           <h4>Registro</h4>
           <input class="control" id= 'full-name'name="name" type="text" placeholder="Ingrese su nombre" onkeypress="nextFocus('full-name', 'domic')"/>
           <input class="control" id= 'domic'name="domic" type="text" placeholder="Ingrese su domicilio" onkeypress="nextFocus('domic', 'correo')"/>
@@ -48,8 +48,5 @@
           <input class="botom" type="submit" name="registro" value="Registrar">
           <p><a href="./Login_val/login.php"> &iquest;Ya tienes una cuenta?</a></p>
         </form>
-      <?php
-          include("insertE.php");
-      ?>
 </body>
 </html>

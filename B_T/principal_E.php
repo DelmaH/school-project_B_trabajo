@@ -1,11 +1,4 @@
-<?php
-  session_start();
-  $correo= $_SESSION['correo'];
-  if($correo == null || $correo == '') {
-    echo 'usted no tiene autorizacion';
-    die();
-  }
-?>
+
 <!DOCTYPE html>
 <html leng="en">
 <head>
@@ -30,26 +23,41 @@
         </div>
         <div class="capa"></div>
   <!--	--------------->
+             <?php
+              session_start();
+
+              if (!isset($_SESSION['correo'])) {
+                // Si no se ha iniciado sesiSón o no se ha establecido el correo, redirigir al inicio de sesión u otra página de manejo de errores
+                header("Location: empresa.php");
+                exit;
+              }
+
+              $correo = $_SESSION['correo'];
+
+              // Incluir el archivo de conexión
+              require_once 'cn.php';
+              ?>
       <div class="text">
         <h2> HOLA BIENVENIDO <?php echo $_SESSION['correo'] ?> </h2>
       </div>
       <?php 
       // Incluir el archivo de conexión
       require_once 'cn.php';
-      $sql = "SELECT Nombre, Foto FROM empresa WHERE Mail = '$correo'";
+      $sql = "SELECT Nombre, Foto, Imagen FROM empresa WHERE Mail = '$correo'";
               $result = mysqli_query($con, $sql);
               // Mostrar los datos en el perfil
               if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
                 $nombre = $row['Nombre'];
                 $imag = $row['Foto'];
+                $imag_emp= $row['Imagen'];
               }
                 ?>
       <div class="card">
          <form class="perfil" action="insert_imagen.php" method="POST" enctype="multipart/form-data">
             <div class="profile">
                 <div class="user-img">
-                    <img src="<?php  echo $row['Foto'] ?>" alt="foto de perfil">
+                    <img class="imgperfil" src="<?php  echo $row['Foto'] ?>" alt="foto de perfil">
                 </div>
                 <div class="content">
                    <?php echo $nombre ;?>
@@ -58,18 +66,38 @@
          </form>
       </div>
       <div class="option">
-        <button onclick="mostrarOcultarDiv('div1')">Descripcion</button>
-        <button onclick="mostrarOcultarDiv('div2')">Empleos</button>
-        <button onclick="mostrarOcultarDiv('div3')">Contacto</button>
+            <button class="button1" onclick="mostrarOcultarDiv('div1')">Descripcion</button>
+            <button class="button2" onclick="mostrarOcultarDiv('div2')">Empleos</button>
+            <button class="button3" onclick="mostrarOcultarDiv('div3')">Contacto</button>
 
         <div id="div1" class="elemento">
-            Esta empresa sueña con empleados que les apasione su trabajo y quieran crecer de forma individual y colectiva
+            <form class="descrip" action="procesar_imagen_E.php" method="POST" enctype="multipart/form-data">
+                <div class="imagen_empresa">
+                    <div class="descripc">
+                        Esta empresa sueña con empleados que les apasione su trabajo y quieran crecer de forma individual y colectiva
+                    </div>
+                    <img id="imagendeempresa"src="<?php  echo $row['Imagen'] ?>" alt="Imagen de empresa">
+                </div>
+                <div class="I-E">
+                    <div class="entrada_imag">
+                      <input type="file" id="proceso" name="proceso" accept="image/*" > 
+                      <label for="proceso"> Imagen </label>
+                    </div>
+                    <div class="form-button">
+                        <button class="botom1" type="submit">Guardar</button>
+                    </div>
+                </div>
+            </form> 
         </div>
         <div id="div2" class="elemento">
+          <div id="Descripcion" class="divs">
             Hola
+          </div>
         </div>
         <div id="div3" class="elemento">
-            Hola 2.
+          <div id="Descripcion" class="divs">
+            Hola 2
+          </div>
         </div>
       </div>
     <input type="checkbox" id="btn-menu">

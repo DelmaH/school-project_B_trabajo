@@ -9,6 +9,7 @@
 		background: white;
 		background-size: 100vw 100vh;
 		background-repeat: no-repeat;
+		position: relative;
 	}
 	.capa{
 		position: fixed;
@@ -151,7 +152,7 @@
 		margin: auto;
 		border: 1px solid #0c0f2d;
 	}
-	img{
+	.imgperfil{
 		width: 200px;
 		height: 150px;
 		align-content: center;
@@ -173,16 +174,100 @@
 		border-right: #fff;
 	}
 	.option{
-		width: auto;
-		margin-left: 30px;
+		width: 100%;
+		margin-left: 20px;
 		margin-right: auto;
 		position: absolute;
 		margin-top: 20%;
 		}
 
+	.button1, .button2,  .button3{
+		width: 100px;
+		height: 35px;
+		display: inline-block;
+		border: transparent;
+		cursor: pointer;
+	}
+	.button1:hover, .button2:hover,  .button3:hover{
+		border-bottom: 2px solid #0a0101;
+	}
+
+	.button1, .button3{
+		margin-left: 35%;
+		margin-right: 20%;
+	}
+	.button2{
+		margin-left: -15%;
+		margin-right: -30%;
+	}
+
 	#div1, #div2, #div3 {
-		margin-top: 50px;
+		margin-top: 15px;
 		color: #1c1c1c;
 		position: relative;
 	}
-	
+	.imagen_empresa{
+		display: inline-flex;
+	}
+	#imagendeempresa{
+		width: 300px;
+		height: 250px;
+		left: 50%;
+		border-color: black;
+		border-radius: 10px;
+		border-width: 1px;
+		border-style: solid;
+		position: relative;
+	}
+	button[type="submit"]:hover,
+	[type="reset"]:hover{
+	  background-color: #555;
+	}
+	.I_E{
+		padding: 10px;
+		border: 1px solid #0c0f2d;
+		border-radius: 6px;
+		font-size: 14px;
+		box-sizing: border-box;
+		place-items: center;
+		margin: auto;
+		cursor: pointer;
+		margin-top: 5px;
+		display: inline-block;
+	}
+	.descripc{
+		margin-bottom: 10px;
+		width: 800px; 
+     	min-width: 800px;
+		height: auto;
+		margin-top: 10px;
+		border-radius: 8px;
+		border-width: 2px;
+		border-color: black;
+		border-style: solid;
+	}
+	input[type="file"],
+ 	input[type="checkbox"]{
+    display: none;
+  	}
+	.entrada_imag{
+		padding: 10px;
+		border: 1px solid #221e4b;
+		border-radius: 15px;
+		font-size: 14px;
+		box-sizing: border-box;
+		cursor: pointer;
+		margin-top: 5px;
+		width: 80px;
+		float: right;
+		margin-right: 15%;
+		text-align: center;
+	}
+	.entrada_imag:hover{
+		background-color: rgb(77, 112, 132);
+		border-color: #1c1c1c;
+		color: #fff;
+	}
+	label[for="proceso"]:hover{
+		cursor: pointer;
+	  }

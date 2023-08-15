@@ -33,7 +33,7 @@
             });
           });
         </script>
-        <form method="POST">
+        <form action="insertA.php" method="POST">
             <h4>Registro</h4>
             <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre"onkeypress="nextFocus('nombres', 'apellidos')">
             <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su apellido"onkeypress="nextFocus('apellidos', 'dni')">
@@ -50,10 +50,6 @@
             <input class="botons" type="submit" name="registro" value="Registrar"> 
             <p><a href="./Login_val/login.php"> &iquest;Ya tienes una cuenta?</a></p>
         </form>
-      <?php
-        include("insertA.php");
-      ?>
-      </form>
 </body>
 </html>
 

@@ -1,6 +1,4 @@
 <?php
-
-
 include("cn.php");
 
 
@@ -17,6 +15,16 @@ if(isset($_POST["registro"])){
             ?>
             <h3 class= "ok"> Te registraste correctamente </h3>
             <?php
+            $correo=$_POST['correo'];
+            session_start();
+            $_SESSION['correo']=$correo;
+            if($resultado == $correo){
+                header('Location:principal_E.php');
+            }
+            elseif($correo == null || $correo == '') {
+              echo 'usted no tiene autorizacion';
+              die();
+            }
         } else{
             ?>
             <h3 class= "bad"> Ocurrio un error </h3>
